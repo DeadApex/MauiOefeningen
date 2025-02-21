@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiOefeningen.ViewModels"
+             x:Class="MauiOefeningen.Views.VragenlijstPage"
+             x:DataType="viewmodel:VragenlijstViewModel"
+             Title="Vragenlijst">
+    <VerticalStackLayout IsVisible="{Binding Zichtbaar}">
+        <HorizontalStackLayout>
+            <Label Text="{Binding Naam, StringFormat='Welkom {0}'}" FontSize="Subtitle" Margin="10, 0"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="10, 0">
+            <Label Text="Eet je gezond?" VerticalOptions="Center" WidthRequest="250"/>
+            <Picker ItemsSource="{Binding KeuzeMenu}" SelectedItem="{Binding KeuzeEten}" WidthRequest="200"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="10, 0">
+            <Label Text="Drink je voldoende?" VerticalOptions="Center" WidthRequest="250"/>
+            <Picker ItemsSource="{Binding KeuzeMenu}" SelectedItem="{Binding KeuzeDrinken}" WidthRequest="200"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="10 ,0">
+            <Label Text="Hoeveel dagen per week sport je?" VerticalOptions="Center" WidthRequest="230"/>
+            <Label Text="{Binding DagenSport}" VerticalOptions="Center" WidthRequest="20"/>
+            <Slider Value="{Binding DagenSport}" Minimum="0" Maximum="7" WidthRequest="200"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="10, 0">
+            <Button Command="{Binding UitvoerTonenCommand}" Text="Controleren" WidthRequest="240" Margin="5"/>
+            <Button Command="{Binding StartenCommand}" Text="Herstarten" WidthRequest="190" Margin="5"/>
+        </HorizontalStackLayout>
+        <Label Text="{Binding Uitvoer}" Margin="10, 0"/>
+    </VerticalStackLayout>
+</ContentPage>

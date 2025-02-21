@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiOefeningen.ViewModels"
+             x:Class="MauiOefeningen.Views.GetallenRijPage"
+             x:DataType="viewmodel:GetallenRijViewModel"
+             Title="GetallenRij">
+    <VerticalStackLayout>
+        <HorizontalStackLayout Margin="5">
+            <Label Text="Geef een getal in:" VerticalOptions="Center" WidthRequest="140"/>
+            <Entry Text="{Binding Getal}" WidthRequest="10"/>
+        </HorizontalStackLayout>
+        <Button Command="{Binding GetalToevoegenCommand}" Text="Getal toevoegen" HorizontalOptions="Start" WidthRequest="185" Margin="5" />
+        <Label Text="{Binding KleinsteGetal, StringFormat='Kleinste getal: {0}'}" Margin="5"/>
+        <Label Text="{Binding GrootsteGetal, StringFormat='Grootste getal: {0}'}" Margin="5"/>
+        <CollectionView ItemsSource="{Binding Getallen}" HorizontalOptions="Start" Margin="5">
+            <CollectionView.Header>
+                <Label Text="Rij:" FontSize="Medium"/>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding}" FontSize="Small"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

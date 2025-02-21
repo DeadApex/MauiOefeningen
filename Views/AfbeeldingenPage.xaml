@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiOefeningen.ViewModels"
+             x:Class="MauiOefeningen.Views.AfbeeldingenPage"
+             x:DataType="viewmodel:AfbeeldingenViewModel"
+             Title="Afbeeldingen">
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Selecteer een getal:" Margin="10"/>
+            <Label Text="{Binding Keuze}" Margin="10"/>
+            <Stepper Increment="1" Minimum="1" Maximum="5" Value="{Binding Keuze}"/>
+        </HorizontalStackLayout>
+        <Button Text="Afbeelding tonen" Command="{Binding UitvoerTonenCommand}" WidthRequest="200" HorizontalOptions="Start" Margin="10"/>
+        <Image Source="{Binding Afbeelding}" Margin="10"/>
+    </VerticalStackLayout>
+</ContentPage>

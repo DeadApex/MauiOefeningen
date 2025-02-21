@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiOefeningen.ViewModels"
+             x:Class="MauiOefeningen.Views.NaamTonenPage"
+             x:DataType="viewmodel:NaamTonenViewModel"
+             Title="Naam tonen">
+    <StackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Geef een naam in:" VerticalOptions="Center" Margin="5"/>
+            <Entry Placeholder="Naam" Text="{Binding Naam}" Margin="5" WidthRequest="180" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Geef een getal in:" VerticalOptions="Center" Margin="8"/>
+            <Entry Placeholder="Getal" Text="{Binding Getal}" Margin="5" WidthRequest="55" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Button Text="Naam tonen" Command="{Binding UitvoerTonenCommand}" Margin="5" WidthRequest="180"/>
+            <Button Text="Resultaat leegmaken" Command="{Binding UitvoerLeegmakenCommand}" Margin="5" WidthRequest="180"/>
+        </HorizontalStackLayout>
+        <Label Text="{Binding Uitvoer}" Margin="5"/>
+    </StackLayout>
+</ContentPage>

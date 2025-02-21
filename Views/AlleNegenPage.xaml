@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiOefeningen.Views.AlleNegenPage"
+             Title="" >
+    <VerticalStackLayout>
+        <Label Text="Dit is het spelletje 'Alle negen" HorizontalOptions="Center" FontSize="Header" Margin="5"/>
+        <Label Text="Gooi met 2 dobbelstenen en klik daarna maximum 2 cijfers weg tot het totaal van de twee dobbelstenen bereikt is." HorizontalOptions="Center" Margin="5"/>
+        <Label Text="Probeer alle getallen weg te krijgen. Tracht een zo laag mogelijke score te bereiken." HorizontalOptions="Center" Margin="5"/>
+        <Button Text="Gooi" HorizontalOptions="Center" Margin="5" WidthRequest="200"/>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label Text="5" FontSize="Header" Margin="10,5,10,5"/>
+            <Label Text="6" FontSize="Header" Margin="10,5,10,5"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button Text="1" Margin="5"/>
+            <Button Text="2" Margin="5"/>
+            <Button Text="3" Margin="5"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button Text="4" Margin="5"/>
+            <Button Text="5" Margin="5"/>
+            <Button Text="6" Margin="5"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button Text="7" Margin="5"/>
+            <Button Text="8" Margin="5"/>
+            <Button Text="9" Margin="5"/>
+        </HorizontalStackLayout>
+        <Label Text="Er is geen combinatie meer mogelijk. Je score is 15" HorizontalOptions="Center" Margin="0,15,0,10"/>
+        <Button Text="Herstart" HorizontalOptions="Center" Margin="5" WidthRequest="200"/>
+    </VerticalStackLayout>
+</ContentPage>

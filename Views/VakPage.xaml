@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiOefeningen.ViewModels"
+             x:Class="MauiOefeningen.Views.VakPage"
+             x:DataType="viewmodel:VakViewModel"
+             Title="Vak">
+    <VerticalStackLayout>
+        <Label Text="Programming Advanced" FontSize="Small" Margin="5"/>
+        <Image Source="pa.png"
+               HeightRequest="100"
+               HorizontalOptions="Start"
+               Margin="5"/>
+        <HorizontalStackLayout Margin="5">
+            <Entry Placeholder="Voornaam" Text="{Binding Voornaam}" WidthRequest="200"/>
+            <Entry Placeholder="Naam" Text="{Binding Naam}" WidthRequest="500"/>
+        </HorizontalStackLayout>
+        <Entry Placeholder="Locatie campus" Text="{Binding Locatie}" WidthRequest="700" HorizontalOptions="Start" Margin="5"/>
+        <HorizontalStackLayout Margin="5" RadioButtonGroup.SelectedValue="{Binding Vast}"
+                               RadioButtonGroup.GroupName="Vast">
+            <Label Text="Vast lokaal?" VerticalOptions="Center"/>
+            <RadioButton VerticalOptions="Center" Value="true"/>
+            <Entry Placeholder="Lokaalnr" Text="{Binding Lokaalnr}" Keyboard="Numeric"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="5">
+            <Label Text="Datum eerste les:"/>
+            <DatePicker Format="dd/MM/yyyy" Date="{Binding Datum}"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Hoeveel denk je te scoren voor dit vak?" Margin="5"/>
+            <Label Text="{Binding Score}" Margin="5,5,0,5"/>
+            <Label Text="/20" Margin="0,5,5,5"/>
+            <Stepper Increment="1" Minimum="0" Maximum="20" Margin="5" Value="{Binding Score}"/>
+        </HorizontalStackLayout>
+        <Button Text="Opslaan" Command="{Binding UitvoerTonenCommand}" WidthRequest="100" HorizontalOptions="Start" Margin="5"/>
+        <Label Text="{Binding Uitvoer}" Margin="5"/>
+    </VerticalStackLayout>
+</ContentPage>
